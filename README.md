@@ -13,10 +13,10 @@ Parts of the code has been used and modified that I found
  4. [Shoutout](#shoutout)
  5. [License](#license)
 
-### 🧨 Installation requirements <a name="installation-req"></a>
+### 🚧 Installation requirements <a name="installation-req"></a>
 Please consider that OPSCCnet has been tested using unix based systems (MacOS and Ubuntu). A GPU is advantegous but not necessary. OPSCC.net can be run using regular clients.
-[How to install anaconda](https://docs.anaconda.com/anaconda/install/)
-[How to install QuPath 0.3.1](https://github.com/qupath/qupath/releases/tag/v0.3.1)
+[How to install anaconda](https://docs.anaconda.com/anaconda/install/)\
+[How to install QuPath 0.3.1](https://github.com/qupath/qupath/releases/tag/v0.3.1)\
 Once you have downloaded / cloned the OPSCC.net repository please navigate to the folder where it is located generate a conda environment, activate the environment and install the pip requirements.
 
 ### 🧨 Installation <a name="installation"></a>
@@ -26,7 +26,7 @@ conda activate OPSCCnet
 pip install -r requirements.txt
 ```
 
-### 💡 Examples <a name="examples"></a>
+### 🎯 Examples <a name="examples"></a>
 Please open the runOPSCCnet.sh shell file using a given editor of choice and insert the QuPath directory where the actual APP is located at the second line, replacing "INSERT QUPATH DIRECTORY TO APP HERE" and save the file. For instance, change it to: QuPathApp="/home/sebastian/DeepLearning_Image/QuPath/bin/QuPath".
 
 If you have already navigated yourself to the OPSCCnet directory, you are ready to go!
