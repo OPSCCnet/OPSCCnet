@@ -15,12 +15,12 @@ Parts of the code has been used and modified that I found
 
 ### 🚧 Installation requirements <a name="installation-req"></a>
 Please consider that OPSCCnet has been tested using unix based systems (MacOS and Ubuntu). A GPU is advantegous but not necessary. OPSCC.net can be run using regular clients.\
-Requirements: \
+Requirements: 
 - [ ] Unix based system
 - [ ] QuPath 0.3.1 installed on your system
-- [How to install QuPath 0.3.1](https://github.com/qupath/qupath/releases/tag/v0.3.1)\
-- [ ] Anaconda (recommended) / Miniconda installed on your system \
-- [How to install anaconda](https://docs.anaconda.com/anaconda/install/)\
+- [How to install QuPath 0.3.1](https://github.com/qupath/qupath/releases/tag/v0.3.1)
+- [ ] Anaconda (recommended) / Miniconda installed on your system 
+- [How to install anaconda](https://docs.anaconda.com/anaconda/install/)
 
 
 Once you have downloaded / cloned the OPSCC.net repository please navigate to the folder where OPSCC.net is located and generate a conda environment, activate the environment following the installation of the pip requirements.
@@ -37,10 +37,10 @@ Please open the runOPSCCnet.sh shell file using a given editor of choice and ins
 
 OPSCC.net is using [paquo](https://github.com/bayer-science-for-a-better-life/paquo) to generate project files. It is necessary for paquo to know where QuPath is installed. Please [read the docs](https://paquo.readthedocs.io/en/latest/) where to put the QuPath directory path in order to let paquo access it.
 
-- [X] QuPath 0.3.1 installed on your system
-- [X] You have changed the second line of the runOPSCCnet.sh shell script to your QuPath APP directory
-- [X] You have installed the pip requirements (please see above)
-- [X] A reference of your QuPath app has been put to paquo (please read their docs) \
+- [x] QuPath 0.3.1 installed on your system
+- [x] You have changed the second line of the runOPSCCnet.sh shell script to your QuPath APP directory
+- [x] You have installed the pip requirements (please see above)
+- [x] A reference of your QuPath app has been put to paquo (please read their docs) \
 
 > You are ready to go, navigate yourself to the OPSCC.net directory
 
