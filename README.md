@@ -18,9 +18,10 @@ Please consider that OPSCCnet has been tested using unix based systems (MacOS an
 Requirements: \
 - [ ] Unix based system
 - [ ] QuPath 0.3.1 installed on your system
+- [How to install QuPath 0.3.1](https://github.com/qupath/qupath/releases/tag/v0.3.1)\
 - [ ] Anaconda (recommended) / Miniconda installed on your system \
 - [How to install anaconda](https://docs.anaconda.com/anaconda/install/)\
-- [How to install QuPath 0.3.1](https://github.com/qupath/qupath/releases/tag/v0.3.1)\
+
 
 Once you have downloaded / cloned the OPSCC.net repository please navigate to the folder where OPSCC.net is located and generate a conda environment, activate the environment following the installation of the pip requirements.
 
