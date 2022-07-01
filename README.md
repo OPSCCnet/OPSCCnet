@@ -13,7 +13,7 @@ Parts of the code has been used and modified that I found
  4. [Shoutout](#shoutout)
  5. [License](#license)
 
-### 🚧 Installation requirements <a name="installation-req"></a>
+### 🚧 Requirements <a name="installation-req"></a>
 Please consider that OPSCCnet has been tested using unix based systems (MacOS and Ubuntu). A GPU is advantegous but not necessary. OPSCC.net can be run using regular clients.\
 Requirements: 
 - [ ] Unix based system
@@ -32,7 +32,6 @@ conda activate OPSCCnet
 pip install -r requirements.txt
 ```
 
-### 🎯 Examples <a name="examples"></a>
 Please open the runOPSCCnet.sh shell file using a given editor of choice and insert the QuPath directory where the actual APP is located at the second line, replacing "INSERT QUPATH DIRECTORY TO APP HERE" and save the file. For instance, change it to: QuPathApp="/home/sebastian/DeepLearning_Image/QuPath/bin/QuPath".
 
 OPSCC.net is using [paquo](https://github.com/bayer-science-for-a-better-life/paquo) to generate project files. It is necessary for paquo to know where QuPath is installed. Please [read the docs](https://paquo.readthedocs.io/en/latest/) where to put the QuPath directory path in order to let paquo access it.
@@ -40,10 +39,10 @@ OPSCC.net is using [paquo](https://github.com/bayer-science-for-a-better-life/pa
 - [x] QuPath 0.3.1 installed on your system
 - [x] You have changed the second line of the runOPSCCnet.sh shell script to your QuPath APP directory
 - [x] You have installed the pip requirements (please see above)
-- [x] A reference of your QuPath app has been put to paquo (please read their docs) \
+- [x] A reference of your QuPath app has been put to paquo (please read their docs) 
 
 > You are ready to go, navigate yourself to the OPSCC.net directory
-
+### 🎯 Examples <a name="examples"></a>
 ./runOPSCCnet has three arguments: -i should be the 'directory where the whole slide images are located'; -o 'directory of the downloaded OPSCC.net reposiroty': -p 'directory where everything will be saved as QuPath project'\
 
 ```bash
@@ -52,5 +51,4 @@ OPSCC.net is using [paquo](https://github.com/bayer-science-for-a-better-life/pa
 TEXT
 ![Github Overview 2](https://github.com/OPSCCnet/OPSCC.net/blob/main/Github_overview_2.png)
 TEXT
-![Github Overview 2](https://github.com/OPSCCnet/OPSCC.net/blob/main/Github_overview_3.png)
 ### Shoutout <a name="shoutout"></a>
