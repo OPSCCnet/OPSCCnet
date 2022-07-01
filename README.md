@@ -19,10 +19,10 @@ Requirements: \
 - [ ] Unix based system
 - [ ] QuPath 0.3.1 installed on your system
 - [ ] Anaconda (recommended) / Miniconda installed on your system \
-[How to install anaconda](https://docs.anaconda.com/anaconda/install/)\
-[How to install QuPath 0.3.1](https://github.com/qupath/qupath/releases/tag/v0.3.1)\
+- [How to install anaconda](https://docs.anaconda.com/anaconda/install/)\
+- [How to install QuPath 0.3.1](https://github.com/qupath/qupath/releases/tag/v0.3.1)\
 
-Once you have downloaded / cloned the OPSCC.net repository please navigate to the folder where it is located and generate a conda environment, and then activate the environment following the installation of the pip requirements.
+Once you have downloaded / cloned the OPSCC.net repository please navigate to the folder where OPSCC.net is located and generate a conda environment, activate the environment following the installation of the pip requirements.
 
 ### 🧨 Installation <a name="installation"></a>
 ```bash
@@ -34,10 +34,19 @@ pip install -r requirements.txt
 ### 🎯 Examples <a name="examples"></a>
 Please open the runOPSCCnet.sh shell file using a given editor of choice and insert the QuPath directory where the actual APP is located at the second line, replacing "INSERT QUPATH DIRECTORY TO APP HERE" and save the file. For instance, change it to: QuPathApp="/home/sebastian/DeepLearning_Image/QuPath/bin/QuPath".
 
-If you have already navigated yourself to the OPSCCnet directory, you are ready to go!
-./runOPSCCnet has three arguments: -i should be the 'directory where the whole slide images are located'; -o 'directory of the OPSCC.net repor': -p 'directory where everything will be saved as QuPath project'
+OPSCC.net is using [paquo](https://github.com/bayer-science-for-a-better-life/paquo) to generate project files. It is necessary for paquo to know where QuPath is installed. Please [read the docs](https://paquo.readthedocs.io/en/latest/) where to put the QuPath directory path in order to let paquo access it.
+
+- [X] QuPath 0.3.1 installed on your system
+- [X] You have changed the second line of the runOPSCCnet.sh shell script to your QuPath APP directory
+- [X] You have installed the pip requirements (please see above)
+- [X] A reference of your QuPath app has been put to paquo (please read their docs) \
+
+> You are ready to go, navigate yourself to the OPSCC.net directory
+
+./runOPSCCnet has three arguments: -i should be the 'directory where the whole slide images are located'; -o 'directory of the downloaded OPSCC.net reposiroty': -p 'directory where everything will be saved as QuPath project'\
+
 ```bash
-./runOPSCCnet -i '/home/sebastian/directory-with-whole-slide-images' -o '/home/sebastian/OPSCC.net' -p 'home/sebastian/directory-where-QuPath-project-should-be-saved'
+./runOPSCCnet.sh -i '/home/sebastian/directory-with-whole-slide-images' -o '/home/sebastian/OPSCC.net' -p 'home/sebastian/directory-where-QuPath-project-should-be-saved'
 ```
 TEXT
 ![Github Overview 2](https://github.com/OPSCCnet/OPSCC.net/blob/main/Github_overview_2.png)
