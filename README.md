@@ -18,7 +18,7 @@ Please consider that OPSCCnet has been tested using unix based systems (MacOS an
 Requirements: \
 - [ ] Unix based system
 - [ ] QuPath 0.3.1 installed on your system
-- [ ] Anaconda (recommended) / Miniconda installed on your system
+- [ ] Anaconda (recommended) / Miniconda installed on your system \
 [How to install anaconda](https://docs.anaconda.com/anaconda/install/)\
 [How to install QuPath 0.3.1](https://github.com/qupath/qupath/releases/tag/v0.3.1)\
 
