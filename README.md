@@ -15,9 +15,14 @@ Parts of the code has been used and modified that I found
 
 ### 🚧 Installation requirements <a name="installation-req"></a>
 Please consider that OPSCCnet has been tested using unix based systems (MacOS and Ubuntu). A GPU is advantegous but not necessary. OPSCC.net can be run using regular clients.\
+Requirements: \
+- [ ] Unix based system
+- [ ] QuPath 0.3.1 installed on your system
+- [ ] Anaconda (recommended) / Miniconda installed on your system
 [How to install anaconda](https://docs.anaconda.com/anaconda/install/)\
 [How to install QuPath 0.3.1](https://github.com/qupath/qupath/releases/tag/v0.3.1)\
-Once you have downloaded / cloned the OPSCC.net repository please navigate to the folder where it is located generate a conda environment, activate the environment and install the pip requirements.
+
+Once you have downloaded / cloned the OPSCC.net repository please navigate to the folder where it is located and generate a conda environment, and then activate the environment following the installation of the pip requirements.
 
 ### 🧨 Installation <a name="installation"></a>
 ```bash
