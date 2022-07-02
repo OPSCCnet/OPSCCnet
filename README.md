@@ -6,10 +6,11 @@ OPSCC.net is an open source tool that allows users to determine HPV-association 
 ### 📋 Table of content
  1. [Installation requirements](#installation-req)
  2. [Installation](#installation)
- 3. [Examples](#examples)
- 4. [Shoutout](#shoutout)
- 5. [Citing](#citation)
- 6. [License](#license)
+ 3. [How to run OPSCC.net](#hwtrun)
+ 4. [Examples](#examples)
+ 5. [Shoutout](#shoutout)
+ 6. [Citing](#citation)
+ 7. [License](#license)
  
 
 ### 🚧 Requirements <a name="installation-req"></a>
@@ -46,14 +47,19 @@ OPSCC.net is using [paquo](https://github.com/bayer-science-for-a-better-life/pa
 - [x] You have put a reference of your QuPath APP to paquo (please read their docs) 
 
 > You are ready to go
-### 🎯 Examples <a name="examples"></a>
+### 🎯 How to run OPSCC.net <a name="hwtrun"></a>
 ./runOPSCCnet has three arguments: -i should be the 'directory where the whole slide images are located'; -o 'directory of the downloaded OPSCC.net reposiroty': -p 'directory where everything will be saved as QuPath project'\
 
 ```bash
 ./runOPSCCnet.sh -i '/home/sebastian/directory-with-whole-slide-images' -o '/home/sebastian/OPSCC.net' -p 'home/sebastian/directory-where-QuPath-project-should-be-saved'
 ```
+### 🎯 Examples <a name="examples"></a>
 ![Github Overview 2](https://github.com/OPSCCnet/OPSCC.net/blob/main/Github_overview_2.png)
-TEXT
+OPSCC.net has essentially three parts:
+- Segmentation of viable tumor areas using a FPN with a ResNet-18 encoder
+- Classification of image tiles for HPV-association using a ResNet-18
+- Visualizing HPV-association on whole slide level (WSI) and giving tabular data as output for individual WSI's
+
 ### Shoutout <a name="shoutout"></a>
 You should visit this [page](https://forum.image.sc/tag/qupath) which is a great ressource for questions regarding QuPath. Snippets and parts from scripts have been copied from there. 
 - A big shoutout to Pete and his crew for making this available to the community
