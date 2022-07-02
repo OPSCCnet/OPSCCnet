@@ -4,7 +4,7 @@ Welcome to the reposiroty of OPSCC.net!
 OPSCC.net is an open source tool that allows users to determine HPV-association in dedicated head and neck tumors. In its current version, OPSCC.net is built around the most used and most succesfull open-source tool for digital pathology (QuPath, at the time of commit at version 0.3.1), which has been built by Pete Bankhead from the The University of Edinburgh [Shoutout](#shoutout). 
 
 ### 📋 Table of content
- 1. [Installation requirements](#installation-req)
+ 1. [Requirements](#installation-req)
  2. [Installation](#installation)
  3. [How to run OPSCC.net](#hwtrun)
  4. [Examples](#examples)
@@ -55,15 +55,15 @@ OPSCC.net is using [paquo](https://github.com/bayer-science-for-a-better-life/pa
 ```
 ### 🎯 Examples <a name="examples"></a>
 ![Github Overview 2](https://github.com/OPSCCnet/OPSCC.net/blob/main/Github_overview_2.png)
-OPSCC.net has essentially three parts:
+### OPSCC.net has essentially three parts:
 - Segmentation of viable tumor areas using a FPN with a ResNet-18 encoder
 - Classification of image tiles for HPV-association using a ResNet-18
 - Visualizing HPV-association on whole slide level (WSI) and giving tabular data as output for individual WSI's
-
+![Github Gif OPSCCnet](https://github.com/OPSCCnet/OPSCC.net/blob/main/Github_gif_OPSCCnet.gif)
 ### Shoutout <a name="shoutout"></a>
 You should visit this [page](https://forum.image.sc/tag/qupath) which is a great ressource for questions regarding QuPath. Snippets and parts from scripts have been copied from there. 
-- A big shoutout to Pete and his crew for making this available to the community
-- Recently, Pete has published a [book](https://bioimagebook.github.io/README.html), I have not had the chance to take a look, but I would recommend it either way
+- A big shoutout to Pete Bankhead and his crew for making this available to the community
+- Recently, Pete Bankhead has published a [book](https://bioimagebook.github.io/README.html), I have not had the chance to take a look, but I would recommend it either way
 - A big shoutout to segmentation models for PyTorch, which has been built by Pavel Iakubovskii
 
 ### Cite our work <a name="citation"></a>
