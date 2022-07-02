@@ -1,17 +1,16 @@
 # OPSCC.net
 ![Github Overview 1](https://github.com/OPSCCnet/OPSCC.net/blob/main/Github_overview_1.png)
 Welcome to the reposiroty of OPSCC.net!
-OPSCC.net is an open source tool that allows users to determine HPV-association in dedicated head and neck tumors. In its current version, OPSCC.net is built around the most used and most succesfull open-source tool for digital pathology (QuPath, at the time of commit at version 0.3.2), which has been built by Pete Bankhead from the The University of Edinburgh. You should visit this page if you have specific questions regarding QuPath. Actually, you should visit this page anyway because QuPath is a fantastic tool.
-A big shoutout to Pete and his crew for making this available to the community.
-Despite QuPath, OPSCC.net uses segmentation models for PyTorch, which has been built by Pavel Iakubovskii.
-Parts of the code has been used and modified that I found 
+OPSCC.net is an open source tool that allows users to determine HPV-association in dedicated head and neck tumors. In its current version, OPSCC.net is built around the most used and most succesfull open-source tool for digital pathology (QuPath, at the time of commit at version 0.3.1), which has been built by Pete Bankhead from the The University of Edinburgh [Shoutout](#shoutout). 
 
 ### 📋 Table of content
  1. [Installation requirements](#installation-req)
  2. [Installation](#installation)
  3. [Examples](#examples)
  4. [Shoutout](#shoutout)
- 5. [License](#license)
+ 5. [Citing](#citation)
+ 6. [License](#license)
+ 
 
 ### 🚧 Requirements <a name="installation-req"></a>
 Please consider that OPSCCnet has been tested using unix based systems (MacOS and Ubuntu). A GPU is advantegous but not necessary. OPSCC.net can be run using regular clients.\
@@ -21,9 +20,14 @@ Requirements:
 - [How to install QuPath 0.3.1](https://github.com/qupath/qupath/releases/tag/v0.3.1)
 - [ ] Anaconda (recommended) / Miniconda installed on your system 
 - [How to install anaconda](https://docs.anaconda.com/anaconda/install/)
+- [ ] git installed / or manually downloaded the OPSCC.net repository 
+- [How to install git](https://github.com/git-guides/install-git)
 
+Clone repository
+```bash
+git clone https://github.com/OPSCCnet/OPSCC.net.git
+```
 
-Once you have downloaded / cloned the OPSCC.net repository please navigate to the folder where OPSCC.net is located and generate a conda environment, activate the environment following the installation of the pip requirements.
 
 ### 🧨 Installation <a name="installation"></a>
 ```bash
@@ -36,19 +40,28 @@ Please open the runOPSCCnet.sh shell file using a given editor of choice and ins
 
 OPSCC.net is using [paquo](https://github.com/bayer-science-for-a-better-life/paquo) to generate project files. It is necessary for paquo to know where QuPath is installed. Please [read the docs](https://paquo.readthedocs.io/en/latest/) where to put the QuPath directory path in order to let paquo access it.
 
-- [x] QuPath 0.3.1 installed on your system
+- [x] You have cloned / downloaded the OPSCC.net.git repository and installed the pip requirements
+- [x] You have installed QuPath 0.3.1 on your system
 - [x] You have changed the second line of the runOPSCCnet.sh shell script to your QuPath APP directory
-- [x] You have installed the pip requirements (please see above)
-- [x] A reference of your QuPath app has been put to paquo (please read their docs) 
+- [x] You have put a reference of your QuPath APP to paquo (please read their docs) 
 
-> You are ready to go, navigate yourself to the OPSCC.net directory
+> You are ready to go
 ### 🎯 Examples <a name="examples"></a>
 ./runOPSCCnet has three arguments: -i should be the 'directory where the whole slide images are located'; -o 'directory of the downloaded OPSCC.net reposiroty': -p 'directory where everything will be saved as QuPath project'\
 
 ```bash
 ./runOPSCCnet.sh -i '/home/sebastian/directory-with-whole-slide-images' -o '/home/sebastian/OPSCC.net' -p 'home/sebastian/directory-where-QuPath-project-should-be-saved'
 ```
-TEXT
 ![Github Overview 2](https://github.com/OPSCCnet/OPSCC.net/blob/main/Github_overview_2.png)
 TEXT
 ### Shoutout <a name="shoutout"></a>
+You should visit this [page](https://forum.image.sc/tag/qupath) which is a great ressource for questions regarding QuPath. Snippets and parts from scripts have been copied from there. 
+- A big shoutout to Pete and his crew for making this available to the community
+- Recently, Pete has published a [book](https://bioimagebook.github.io/README.html), I have not had the chance to take a look, but I would recommend it either way
+- A big shoutout to segmentation models for PyTorch, which has been built by Pavel Iakubovskii
+
+### Cite our work <a name="citation"></a>
+- please cite our work [ref](ref)
+
+### Licence <a name="licence"></a>
+OPSCC.net is made for academic fellows. It is not ment for commercial bodies.
