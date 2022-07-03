@@ -1,5 +1,5 @@
 #!/bin/bash
-QuPathApp="/home/sebastian/DeepLearning_Image/QuPath/bin/QuPath"
+QuPathApp="INSERT QUPATH DIRECTORY TO APP HERE"
 while getopts i:o:p: flag
 do
     case "${flag}" in
@@ -36,7 +36,7 @@ $QuPathApp --quiet --log OFF script "$OPSCCdir/QuPathscripts/Export_tiles_annota
 echo -e "\n<<<<<<<<<<>>>>>>>>>>>\nStain normalization of tumor tiles.\nSTEP 6/9\n<<<<<<<<<<>>>>>>>>>>>"
 python "$OPSCCdir/Python_scripts/StainNormalization.py"
 echo -e "\n<<<<<<<<<<>>>>>>>>>>>\nClassifying tumor tiles for HPV-association.\nSTEP 7/9\n<<<<<<<<<<>>>>>>>>>>>" 
-python -W ignore::UserWarning:keras.engine.training:2035 "$OPSCCdir/Python_scripts/Classification.py"
+python "$OPSCCdir/Python_scripts/Classification.py"
 echo -e "\n<<<<<<<<<<>>>>>>>>>>>\nVisualizing results and saving them into QuPath project.\n<<<<<<<<<<>>>>>>>>>>>\nSTEP 8/9" 
 $QuPathApp --quiet --log OFF script "$OPSCCdir/QuPathscripts/Visualize_tiles_directory.groovy" \
 --project "$ProjectDir/project.qpproj"

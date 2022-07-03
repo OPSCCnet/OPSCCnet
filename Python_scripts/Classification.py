@@ -86,7 +86,7 @@ def main():
     )
     numberofimages= (len(full_list))
     steps_calc = numberofimages/batch_size
-    prediction = model.predict_generator(test_ds,verbose=1,steps=steps_calc, max_queue_size = 32, workers=68)
+    prediction = model.predict(test_ds,verbose=1,steps=steps_calc, max_queue_size = 32, workers=68)
     #predicted_class = np.argmax(prediction,axis=1)
     OUTPUT_DIR = args.outdir
     os.makedirs(OUTPUT_DIR, exist_ok = True)
