@@ -14,7 +14,7 @@ echo -e "\n<<<<<<<<<<>>>>>>>>>>>\n
 ██║░░██║██████╔╝╚█████╗░██║░░╚═╝██║░░╚═╝░░░██╔██╗██║█████╗░░░░░██║░░░
 ██║░░██║██╔═══╝░░╚═══██╗██║░░██╗██║░░██╗░░░██║╚████║██╔══╝░░░░░██║░░░
 ╚█████╔╝██║░░░░░██████╔╝╚█████╔╝╚█████╔╝██╗██║░╚███║███████╗░░░██║░░░
-░╚════╝░╚═╝░░░░░╚═════╝░░╚════╝░░╚════╝░╚═╝╚═╝░░╚══╝╚══════╝░░░╚═╝░░░\nThe following parameters have been set:"
+░╚════╝░╚═╝░░░░░╚═════╝░░╚════╝░░╚════╝░╚═╝╚═╝░░╚══╝╚══════╝░░░╚═╝░░░\n\n\n\nThe following parameters have been set:"
 echo "QuPath APP directory: $QuPathApp";
 echo "Directory for virtual whole slide images: $WSIdir";
 echo "OPSCCnet directory: $OPSCCdir";
