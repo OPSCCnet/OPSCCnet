@@ -59,7 +59,7 @@ OPSCC.net is using [paquo](https://github.com/bayer-science-for-a-better-life/pa
 - Segmentation of viable tumor areas using a FPN with a ResNet-18 encoder
 - Classification of image tiles for HPV-association using a ResNet-18
 - Visualizing HPV-association on whole slide level (WSI) and giving tabular data as output for individual WSI's
-![Github Gif OPSCCnet](https://github.com/OPSCCnet/OPSCC.net/blob/main/Github_mp4_OPSCCnet.mp4)
+![Github Gif OPSCCnet](https://github.com/OPSCCnet/OPSCC.net/blob/main/OPSCCnet_gif.gif)
 ### Shoutout <a name="shoutout"></a>
 You should visit this [page](https://forum.image.sc/tag/qupath) which is a great ressource for questions regarding QuPath. Snippets and parts from scripts have been copied from there. 
 - A big shoutout to Pete Bankhead and his crew for making this available to the community
