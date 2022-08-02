@@ -11,7 +11,7 @@ OPSCC.net is an open source tool that allows users to determine HPV-association 
  5. [Shoutout](#shoutout)
  6. [Citing](#citation)
  7. [License](#license)
- 
+ 8. [Acknowledgements](#acknowledgements)
 
 ### 🚧 Requirements <a name="installation-req"></a>
 Please consider that OPSCCnet has been tested using unix based systems (MacOS and Ubuntu). A GPU is advantegous but not necessary. OPSCC.net can be run using regular clients.\
@@ -71,3 +71,6 @@ You should visit this [page](https://forum.image.sc/tag/qupath) which is a great
 
 ### Licence <a name="licence"></a>
 OPSCC.net is made for academic, research use only. This is not a medical product.
+
+### Acknowledgements<a name="acknowledgements"></a>
+Figures were created with https://biorender.com/ and Adobe illustrator version 26.4. 
