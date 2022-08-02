@@ -67,7 +67,7 @@ You should visit this [page](https://forum.image.sc/tag/qupath) which is a great
 - A big shoutout to segmentation models for PyTorch, which has been built by Pavel Iakubovskii
 
 ### Cite our work <a name="citation"></a>
-- please cite our work [ref](ref)
+- please cite our work: currently our work is under review
 
 ### Licence <a name="licence"></a>
-OPSCC.net is made for academic fellows. It is not ment for commercial bodies.
+OPSCC.net is made for academic, research use only. This is not a medical product.
