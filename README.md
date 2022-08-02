@@ -1,12 +1,12 @@
-# OPSCC.net
+# OPSCCnet
 ![Github Overview 1](https://github.com/OPSCCnet/OPSCCnet/blob/main/Github_overview_1.png)
 Welcome to the reposiroty of OPSCCnet!
-OPSCCnet is an open source tool that allows users to determine HPV-association in dedicated head and neck tumors. In its current version, OPSCC.net is built around the most used and most succesfull open-source tool for digital pathology (QuPath, at the time of commit at version 0.3.1), which has been built by Pete Bankhead from the The University of Edinburgh [Shoutout](#shoutout). 
+OPSCCnet is an open source tool that allows users to determine HPV-association in dedicated head and neck tumors. In its current version, OPSCCnet is built around the most used and most succesfull open-source tool for digital pathology (QuPath, at the time of commit at version 0.3.1), which has been built by Pete Bankhead from the The University of Edinburgh [Shoutout](#shoutout). 
 
 ### 📋 Table of content
  1. [Requirements](#installation-req)
  2. [Installation](#installation)
- 3. [How to run OPSCC.net](#hwtrun)
+ 3. [How to run OPSCCnet](#hwtrun)
  4. [Examples](#examples)
  5. [Shoutout](#shoutout)
  6. [Citing](#citation)
@@ -14,14 +14,14 @@ OPSCCnet is an open source tool that allows users to determine HPV-association i
  8. [Acknowledgements](#acknowledgements)
 
 ### 🚧 Requirements <a name="installation-req"></a>
-Please consider that OPSCCnet has been tested using unix based systems (MacOS and Ubuntu). A GPU is advantegous but not necessary. OPSCC.net can be run using regular clients.\
+Please consider that OPSCCnet has been tested using unix based systems (MacOS and Ubuntu). A GPU is advantegous but not necessary. OPSCCnet can be run using regular clients.\
 Requirements: 
 - [ ] Unix based system
 - [ ] QuPath 0.3.1 installed on your system
 - [How to install QuPath 0.3.1](https://github.com/qupath/qupath/releases/tag/v0.3.1)
 - [ ] Anaconda (recommended) / Miniconda installed on your system 
 - [How to install anaconda](https://docs.anaconda.com/anaconda/install/)
-- [ ] git installed / or manually downloaded the OPSCC.net repository 
+- [ ] git installed / or manually downloaded the OPSCCnet repository 
 - [How to install git](https://github.com/git-guides/install-git)
 
 Clone repository
@@ -48,7 +48,7 @@ OPSCCnet is using [paquo](https://github.com/bayer-science-for-a-better-life/paq
 
 > You are ready to go
 ### 🎯 How to run OPSCCnet <a name="hwtrun"></a>
-./runOPSCCnet has three arguments: -i should be the 'directory where the whole slide images are located'; -o 'directory of the downloaded OPSCC.net reposiroty': -p 'directory where everything will be saved as QuPath project'\
+./runOPSCCnet has three arguments: -i should be the 'directory where the whole slide images are located'; -o 'directory of the downloaded OPSCCnet reposiroty': -p 'directory where everything will be saved as QuPath project'\
 
 ```bash
 ./runOPSCCnet.sh -i '/home/sebastian/directory-with-whole-slide-images' -o '/home/sebastian/OPSCCnet' -p 'home/sebastian/directory-where-QuPath-project-should-be-saved'
@@ -70,7 +70,7 @@ You should visit this [page](https://forum.image.sc/tag/qupath) which is a great
 - please cite our work: currently our work is under review
 
 ### Licence <a name="licence"></a>
-OPSCC.net is made for academic, research use only. This is not a medical product.
+OPSCCnet is made for academic bodies, and its research use only. This is not a medical product.
 
 ### Acknowledgements<a name="acknowledgements"></a>
 Figures were created with https://biorender.com/ and Adobe illustrator version 26.4. 
