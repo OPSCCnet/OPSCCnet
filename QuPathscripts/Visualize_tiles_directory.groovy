@@ -19,8 +19,7 @@ import javax.imageio.ImageIO
 def imageData = getCurrentImageData()
 def hierarchy = imageData.getHierarchy()
 def server = imageData.getServer()
-
-
+println('Visualising results for the following virtual whole slide image: ' + server.getMetadata().getName())
 /* The CSV header line should be as follows:
  * x,y,width,height,VALUENAME1,VALUENAME2,...
  * The VALUENAMEs are used as the labels for the detection object measurements.

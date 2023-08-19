@@ -9,7 +9,6 @@ Created on Fri Jun 10 20:49:40 2022
 import argparse
 import os
 import numpy as np
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  #represss tf messages
 import tensorflow as tf
 from tensorflow.keras.models import  load_model
 import pandas as pd
@@ -18,6 +17,8 @@ import json
 from pathlib import Path
 from os.path import exists
 from zipfile import ZipFile
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  #represss tf messages
+tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
 def main():
     #set directory of QuPath project
     pwd = Path(__file__).parent
@@ -86,7 +87,7 @@ def main():
     )
     numberofimages= (len(full_list))
     steps_calc = numberofimages/batch_size
-    prediction = model.predict(test_ds,verbose=1,steps=steps_calc, max_queue_size = 32, workers=68)
+    prediction = model.predict_generator(test_ds,verbose=1,steps=steps_calc, max_queue_size = 32, workers=68)
     #predicted_class = np.argmax(prediction,axis=1)
     OUTPUT_DIR = args.outdir
     os.makedirs(OUTPUT_DIR, exist_ok = True)

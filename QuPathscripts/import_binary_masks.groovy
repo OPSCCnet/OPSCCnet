@@ -13,6 +13,8 @@
  * By default, the image name stored in the mask filename has to match that of the current image - but this check can be turned off.
  *
  * @author Benjamin Pavie - greatly inspired from Pete Bankhead's script writen for version 0.1*
+ * 
+ * adapted to the specific needs of OPSCCnet
  */
  
  //Requirement:
@@ -29,7 +31,6 @@ import qupath.lib.regions.ImagePlane
 import javax.imageio.ImageIO
 
 // Get the main QuPath data structures
-// Get the main QuPath data structures
 def imageData = getCurrentImageData()
 def hierarchy = imageData.getHierarchy()
 def server = imageData.getServer()
@@ -45,7 +46,7 @@ if (!dirOutput.isDirectory()) {
     print dirOutput + ' is not a valid directory!'
     return
 }
-def files = dirOutput.listFiles({f -> f.isFile() && f.getName().contains(includeText) && f.getName().endsWith('_class.png') } as FileFilter) as List
+def files = dirOutput.listFiles({f -> f.isFile() && f.getName().startsWith(includeText + " [") && f.getName().endsWith('_class.png') } as FileFilter) as List //fixes a previous issue
 if (files.isEmpty()) {
     print 'No mask files found in ' + dirOutput
     return

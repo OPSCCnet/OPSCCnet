@@ -20,76 +20,98 @@ import glob
 from PIL import Image
 from tqdm import tqdm
 
-#set directory of QuPath project
+# Setzen des Projektverzeichnisses
 pwd = Path(__file__).parent
 pwd2 = pwd.parent
 default_dir = open(os.path.join(pwd2, "Project_dir.json"), 'r')
 default_segmentation = json.load(default_dir)
 default_segmentation_dir_input = os.path.join(default_segmentation['path'], "tiles")
 default_segmentation_dir_output = os.path.join(default_segmentation['path'], "tiles_segmented")
-#args---------------
-parser = argparse.ArgumentParser()
-parser.add_argument('-p', '--path', type=Path, help= 'Please insert directory for files to be processed for segmentation here. Usually /tiles', default=default_segmentation_dir_input)
-parser.add_argument('-o', '--outdir', help="outputdir, default ./output_segmentation/", default=default_segmentation_dir_output, type=Path)
-args = parser.parse_args()   
+
+def parse_arguments():
+    parser = argparse.ArgumentParser(description="Script zur Bildsegmentierung mit einem vortrainierten Modell.")
+    
+    parser.add_argument('-p', '--path', type=Path, 
+                        help='Verzeichnis für zu verarbeitende Bilder zur Segmentierung. Standardmäßig /tiles', 
+                        default=default_segmentation_dir_input)
+    
+    parser.add_argument('-o', '--outdir', type=Path,
+                        help='Ausgabeverzeichnis. Standardmäßig ./output_segmentation/', 
+                        default=default_segmentation_dir_output)
+    
+    return parser.parse_args()
+
+args = parse_arguments()
 data_dir = args.path
-#GPU--START
-model_pwd = os.path.join(pwd,"model")
-model_pwd_weights = os.path.join(model_pwd, "OPSCCnet_FPN_ResNet18.pth")
-model = InfModel("FPN", "resnet18",encoder_weights="imagenet", in_channels=3, out_classes=1)
-model.load_state_dict(torch.load(model_pwd_weights))
-model.eval()
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-threads = torch.get_num_threads()
-if device =="cpu":
-    #torch.set_num_threads(round(threads*0.6))
-    torch.set_num_threads(8)
-else:
-    pass
 
-model.to(device) #added
-#GPU--END
+def initialize_model():
+    model_pwd = os.path.join(pwd, "model")
+    model_pwd_weights = os.path.join(model_pwd, "OPSCCnet_FPN_ResNet18.pth")
+    
+    model = InfModel("FPN", "resnet18", encoder_weights="imagenet", in_channels=3, out_classes=1)
+    model.load_state_dict(torch.load(model_pwd_weights))
+    model.eval()
 
-#set dirs
-OUTPUT_DIR = args.outdir
-os.makedirs(OUTPUT_DIR, exist_ok = True)
-input_files_path = args.path
-input_files = glob.glob(os.path.join(input_files_path, '*.jpg'))
-files = []
-files = input_files
-#batch
-long_list = files
-batch_size = 10
-sub_list_length = batch_size
-sub_lists = [
-    long_list[i : i + sub_list_length]
-    for i in range(0, len(long_list), sub_list_length)
-]
-#batch end
-#process file func
-def process_function(list):
-    for item in list:
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    threads = torch.get_num_threads()
+    
+    if device == "cpu":
+        # Nutzen Sie die verfügbaren CPU-Kerne effizient, anstatt den Wert zu verhärten.
+        torch.set_num_threads(max(1, int(threads * 0.6)))
+    # Falls in der Zukunft eine besondere GPU-Verarbeitung benötigt wird, kann sie hier hinzugefügt werden.
+
+    # Wrap the model using nn.DataParallel for efficient GPU utilization
+    model = torch.nn.DataParallel(model)
+    model.to(device)
+    
+    return model, device
+
+model, device = initialize_model()
+
+def prepare_data(data_dir):
+    input_files_path = data_dir
+    input_files = glob.glob(os.path.join(input_files_path, '*.jpg'))
+    files = input_files
+    
+    # Anzahl der Bilder anzeigen
+    print(f"Segmenting a total of {len(files)} images.")
+    
+    batch_size = 10
+    sub_lists = [
+        files[i: i + batch_size]
+        for i in range(0, len(files), batch_size)
+    ]
+    
+    return sub_lists
+
+data_batches = prepare_data(data_dir)
+
+
+def process_function(batch, model, device, OUTPUT_DIR):
+    for item in batch:
         fname = item
-        newfname = "%s/%s_class.png" % (OUTPUT_DIR, os.path.basename(fname)[0:-4])
+        newfname = f"{OUTPUT_DIR}/{os.path.basename(fname)[:-4]}_class.png"
+        
         img = Image.open(fname).convert("RGB")
-        #img = fn.resize(img, size=[1024,1024])
-        io = np.array(img) 
+        io = np.array(img)
         io = np.moveaxis(io, -1, 0)
         io = torch.from_numpy(io)
+        
         logits = model(io.to(device)).cpu().numpy()
         pr_mask = sigmoid(logits)
-        pr_mask = np.asarray(pr_mask)
         pr_mask = pr_mask.astype(np.float32)
-        pr_mask = pr_mask.squeeze().astype(np.uint8)*255
-        #pr_mask = np.array(Image.fromarray(pr_mask).resize((4096, 4096), Image.NEAREST))
-        min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(pr_mask)
+        pr_mask = pr_mask.squeeze().astype(np.uint8) * 255
+        
+        min_val, max_val, _, _ = cv2.minMaxLoc(pr_mask)
         if max_val > 0.0:
-            cv2.imwrite(newfname,pr_mask)
-        else:
-            pass
+            cv2.imwrite(newfname, pr_mask)
+
+
+OUTPUT_DIR = args.outdir
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 with torch.no_grad():
-    for sub_list in tqdm(sub_lists):
-        partial_result = process_function(sub_list)
+    for batch in tqdm(data_batches):
+        process_function(batch, model, device, OUTPUT_DIR)
 
 
