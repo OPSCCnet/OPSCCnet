@@ -1,6 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite the following paper:"
 title: "Predicting HPV association using deep learning and regular H&E stains allows granular stratification of oropharyngeal cancer patients"
+type: article
 authors:
   - family-names: "Klein"
     given-names: "Sebastian"
