@@ -59,6 +59,7 @@ preferred-citation:
   authors:
   - family-names: "Klein"
     given-names: "Sebastian"
+    orcid: "https://orcid.org/0000-0002-2188-9377"
   - family-names: "Wuerdemann"
     given-names: "Nora"
   - family-names: "Demers"
@@ -108,7 +109,9 @@ preferred-citation:
   doi: "10.1038/s41746-023-00901-z"
   journal: "npj Digital Medicine"
   month: 8
-  start: 152 # Startseite
+  start: 152 
+  end: 163
+  title: "Predicting HPV association using deep learning and regular H&E stains allows granular stratification of oropharyngeal cancer patients"
   volume: 6
   year: 2023
   issue: 1
