@@ -52,7 +52,7 @@ It appears there is some misunderstanding of how to configure paquo, I have put 
 cd /media/somewhere/OPSCCnet
 python -m paquo config --list --default
 python -m paquo config -l -o .
-nano nano .paquo.toml
+nano .paquo.toml
 ```
 👇
 ### 💁 Details on how to use nano and set up the path
