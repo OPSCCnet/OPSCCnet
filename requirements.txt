@@ -12,7 +12,6 @@ pytorch_lightning==1.5.4
 scipy==1.8.1
 segmentation-models-pytorch==0.2.1
 staintools==2.1.2
-streamlit==1.29.0
 tensorflow==2.8.0
 tensorflow-io-gcs-filesystem==0.26.0
 tqdm==4.65.0
