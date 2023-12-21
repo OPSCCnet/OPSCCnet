@@ -8,7 +8,7 @@ OPSCCnet is an open source tool that allows users to determine HPV-association i
  2. [Installation](#installation_1)
  3. [Configuration of paquo](#installation_2)
  4. [How to run OPSCCnet browser](#hwtrun_1)
- 5. [How to run OPSCCnet browser using command line (it seems this the way to go for MAC Systems)](#hwtrun_2)
+ 5. [How to run OPSCCnet using command line](#hwtrun_2)
  6. [Examples](#examples)
  7. [Shoutout](#shoutout)
  8. [Citing](#citation)
@@ -35,7 +35,8 @@ git clone https://github.com/OPSCCnet/OPSCCnet.git
 ```bash
 conda create --name OPSCCnet python=3.9
 conda activate OPSCCnet
-pip install -r requirements.txt
+pip install -r requirements.txt # please only use this if you are running a non MacOS system
+pip install -r requirementsMacOS.txt # MacOS users: please use this
 ```
 
 OPSCCnet is using [paquo](https://github.com/bayer-science-for-a-better-life/paquo) to generate project files. It is necessary for paquo to know where QuPath is installed. Please [read the docs](https://paquo.readthedocs.io/en/latest/) where to put the QuPath directory path in order to let paquo access it.
@@ -45,6 +46,7 @@ OPSCCnet is using [paquo](https://github.com/bayer-science-for-a-better-life/paq
 - [x] You now have a directory where OPSCCnet is installeg, e.g. /media/somewhere/OPSCCnet
 
 It appears there is some misunderstanding of how to configure paquo, I have put a description below on how to set the path.
+> If you have installed QuPath on a MacOS system with default parameters, you can skip this part!
 ### 🧨 Configuration of paquo <a name="installation_2"></a>
 ```bash
 cd /media/somewhere/OPSCCnet
@@ -54,14 +56,15 @@ nano nano .paquo.toml
 ```
 👇
 ### 💁 Details on how to use nano and set up the path
+> skip this part if you have installed QuPath on a MacOS system using the default location
 > Using nano: STRG + O writes the output and STRG + X exits the file.
 > Once you have opened the paquo configure file, set the QuPath dir, e.g. qupath_dir "/home/sebastian/DeepLearning_Image/QuPath043/QuPath-0.4.3-Linux/QuPath/" [Please pay attention! The QuPath dir to be set for OPSCCnet either in the browser version or the command line version would be QuPathApp="/home/sebastian/DeepLearning_Image/QuPath043/QuPath-0.4.3-Linux/QuPath/bin/QuPath"; so they differ!]
 
-- [x] You have put a reference of your QuPath APP to paquo (please see above; read their docs) 
+- [x] You have put a reference of your QuPath APP to paquo (you don't have to do this if you have installed it on a MacOS system with default parameters; otherwise please see above) 
 
 > You are ready to go
 ### 🎯 How to run OPSCCnet using a browser <a name="hwtrun_1"></a>
-
+> If you are using a MacOS system, the correct directory to set for the QuPath app in the browser is "/Applications/QuPath.app/Contents/MacOS/QuPath"
 ```bash
 streamlit run OPSCCnet.py
 ```
@@ -69,6 +72,7 @@ streamlit run OPSCCnet.py
 ### 🎯 How to run OPSCCnet using the command line <a name="hwtrun_2"></a>
 ### 💁 Prepare the bash script of run_OPSCCnet.sh
 > Please set the QuPath App directory, e.g. "QuPathApp="/home/sebastian/DeepLearning_Image/QuPath043/QuPath-0.4.3-Linux/QuPath/bin/QuPath" in the run_OPSCCnet.sh
+> If you are using a MacOS System and have installed QuPath using the system defaults, this path is "QuPathApp="/Applications/QuPath.app/Contents/MacOS/QuPath"
 > If you are starting the bash script for the first time, you need to include "chmod +x run_OPSCCnet.sh"
 ```bash
 chmod +x run_OPSCCnet.sh

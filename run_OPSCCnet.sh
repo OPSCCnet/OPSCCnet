@@ -1,5 +1,6 @@
 #!/bin/bash
-QuPathApp="/home/sebastian/DeepLearning_Image/QuPath043/QuPath-0.4.3-Linux/QuPath/bin/QuPath"
+QuPathApp="/home/sebastian/DeepLearning_Image/QuPath043/QuPath-0.4.3-Linux/QuPath/bin/QuPath" # Ubuntu Linux
+#QuPathApp="/Applications/QuPath.app/Contents/MacOS/QuPath" # MacOS
 while getopts i:o:p: flag
 do
     case "${flag}" in

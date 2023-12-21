@@ -96,7 +96,7 @@ def list_rendered_images_and_csv(ProjectDir, QuPathApp):
             
 
 st.title('OPSCCnet')
-QuPathApp = st.text_input('QuPath APP directory:', '/somewhere/QuPath043/QuPath-0.4.3-Linux/QuPath/bin/QuPath')
+QuPathApp = st.text_input('QuPath APP directory:', 'MacOS: /Applications/QuPath.app/Contents/MacOS/QuPath   Linux: /somewhere/QuPath043/QuPath-0.4.3-Linux/QuPath/bin/QuPath')
 WSIdir = st.text_input('Directory for virtual whole slide images:', '')
 OPSCCdir = st.text_input('OPSCCnet directory:', '')
 ProjectDir = st.text_input('QuPath project directory:', '')
