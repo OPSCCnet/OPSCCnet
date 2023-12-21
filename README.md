@@ -68,7 +68,7 @@ streamlit run OPSCCnet.py
 
 ### 🎯 How to run OPSCCnet using the command line <a name="hwtrun_2"></a>
 ### 💁 Prepare the bash script of run_OPSCCnet.sh
-- set the QuPath App directory, e.g. "QuPathApp="/home/sebastian/DeepLearning_Image/QuPath043/QuPath-0.4.3-Linux/QuPath/bin/QuPath" in the run_OPSCCnet.sh
+> set the QuPath App directory, e.g. "QuPathApp="/home/sebastian/DeepLearning_Image/QuPath043/QuPath-0.4.3-Linux/QuPath/bin/QuPath" in the run_OPSCCnet.sh
 ```bash
 ./run_OPSCCnet.sh -i '/media/sebastian/8e545a02-8515-436b-9abe-f0b9ba1489d1/WSI/test_folder/WSI' -o '/media/sebastian/b4215009-f647-4cf3-97fe-038c17c9f61e/OPSCCnet' -p '/media/sebastian/8e545a02-8515-436b-9abe-f0b9ba1489d1/WSI/test_folder/test'
 ```
