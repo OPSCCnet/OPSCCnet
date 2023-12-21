@@ -5,13 +5,15 @@ OPSCCnet is an open source tool that allows users to determine HPV-association i
 
 ### 📋 Table of content
  1. [Requirements](#installation-req)
- 2. [Installation](#installation)
- 3. [How to run OPSCCnet](#hwtrun)
- 4. [Examples](#examples)
- 5. [Shoutout](#shoutout)
- 6. [Citing](#citation)
- 7. [License](#license)
- 8. [Acknowledgements](#acknowledgements)
+ 2. [Installation](#installation_1)
+ 3. [Configuration of paquo](#installation_2)
+ 4. [How to run OPSCCnet browser](#hwtrun_1)
+ 5. [How to run OPSCCnet browser using command line (it seems this the way to go for MAC Systems)](#hwtrun_2)
+ 6. [Examples](#examples)
+ 7. [Shoutout](#shoutout)
+ 8. [Citing](#citation)
+ 9. [License](#license)
+ 10. [Acknowledgements](#acknowledgements)
 
 ### 🚧 Requirements <a name="installation-req"></a>
 Please consider that OPSCCnet has been tested using unix based systems (MacOS and Ubuntu). A GPU is advantegous but not necessary. OPSCCnet can be run using regular clients.\
@@ -29,8 +31,7 @@ Clone repository
 git clone https://github.com/OPSCCnet/OPSCCnet.git
 ```
 
-
-### 🧨 Installation <a name="installation"></a>
+### 🧨 Installation <a name="installation_1"></a>
 ```bash
 conda create --name OPSCCnet python=3.9
 conda activate OPSCCnet
@@ -41,14 +42,36 @@ OPSCCnet is using [paquo](https://github.com/bayer-science-for-a-better-life/paq
 
 - [x] You have cloned / downloaded the OPSCCnet.git repository and installed the pip requirements
 - [x] You have installed QuPath 0.4.3 (see above) on your system
-- [x] You have put a reference of your QuPath APP to paquo (please read their docs) 
+- [x] You now have a directory where OPSCCnet is installeg, e.g. /media/somewhere/OPSCCnet
+
+It appears there is some misunderstanding of how to configure paquo, I have put a description below on how to set the path.
+### 🧨 Configuration of paquo <a name="installation_2"></a>
+```bash
+cd /media/somewhere/OPSCCnet
+python -m paquo config --list --default
+python -m paquo config -l -o .
+nano nano .paquo.toml
+```
+👇
+### 💁 Details on how to use nano and set up the path
+- Using nano: STRG + O writes the output and STRG + X exits the file.
+- Once you have opened the paquo configure file, set the QuPath dir, e.g. qupath_dir "/home/sebastian/DeepLearning_Image/QuPath043/QuPath-0.4.3-Linux/QuPath/" [Please pay attention! The QuPath dir to be set for OPSCCnet either in the browser version or the command line version would be QuPathApp="/home/sebastian/DeepLearning_Image/QuPath043/QuPath-0.4.3-Linux/QuPath/bin/QuPath"; so they differ!]
+- [x] You have put a reference of your QuPath APP to paquo (please see above; read their docs) 
 
 > You are ready to go
-### 🎯 How to run OPSCCnet <a name="hwtrun"></a>
+### 🎯 How to run OPSCCnet using a browser <a name="hwtrun_1"></a>
 
 ```bash
 streamlit run OPSCCnet.py
 ```
+
+### 🎯 How to run OPSCCnet using the command line <a name="hwtrun_2"></a>
+### 💁 Prepare the bash script of run_OPSCCnet.sh
+- set the QuPath App directory, e.g. "QuPathApp="/home/sebastian/DeepLearning_Image/QuPath043/QuPath-0.4.3-Linux/QuPath/bin/QuPath" in the run_OPSCCnet.sh
+```bash
+./run_OPSCCnet.sh -i '/media/sebastian/8e545a02-8515-436b-9abe-f0b9ba1489d1/WSI/test_folder/WSI' -o '/media/sebastian/b4215009-f647-4cf3-97fe-038c17c9f61e/OPSCCnet' -p '/media/sebastian/8e545a02-8515-436b-9abe-f0b9ba1489d1/WSI/test_folder/test'
+```
+
 ### 🎯 Examples <a name="examples"></a>
 ![Github Overview 2](https://github.com/OPSCCnet/OPSCCnet/blob/main/Github_overview_2.png)
 ### OPSCCnet has essentially three parts:
