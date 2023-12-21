@@ -54,8 +54,9 @@ nano nano .paquo.toml
 ```
 👇
 ### 💁 Details on how to use nano and set up the path
-- Using nano: STRG + O writes the output and STRG + X exits the file.
-- Once you have opened the paquo configure file, set the QuPath dir, e.g. qupath_dir "/home/sebastian/DeepLearning_Image/QuPath043/QuPath-0.4.3-Linux/QuPath/" [Please pay attention! The QuPath dir to be set for OPSCCnet either in the browser version or the command line version would be QuPathApp="/home/sebastian/DeepLearning_Image/QuPath043/QuPath-0.4.3-Linux/QuPath/bin/QuPath"; so they differ!]
+> Using nano: STRG + O writes the output and STRG + X exits the file.
+> Once you have opened the paquo configure file, set the QuPath dir, e.g. qupath_dir "/home/sebastian/DeepLearning_Image/QuPath043/QuPath-0.4.3-Linux/QuPath/" [Please pay attention! The QuPath dir to be set for OPSCCnet either in the browser version or the command line version would be QuPathApp="/home/sebastian/DeepLearning_Image/QuPath043/QuPath-0.4.3-Linux/QuPath/bin/QuPath"; so they differ!]
+
 - [x] You have put a reference of your QuPath APP to paquo (please see above; read their docs) 
 
 > You are ready to go
